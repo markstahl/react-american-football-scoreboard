@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 
 const BottomRow = () => {
+
+  const [quarter, newQuarter] = useState(4)
+  const min = 0;
+  const max = 4;
+  const rand = min + Math.random() * (max - min);
+
   return (
     <div className="bottomRow">
       <div className="down">
@@ -18,7 +24,7 @@ const BottomRow = () => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">4</div>
+        <div onClick={() => {newQuarter(Math.ceil(rand))}} className="quarter__value">{quarter}</div>
       </div>
     </div>
   );
