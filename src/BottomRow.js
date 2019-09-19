@@ -3,10 +3,7 @@ import "./App.css";
 
 const BottomRow = () => {
 
-  const [quarter, newQuarter] = useState(4)
-  const min = 0;
-  const max = 4;
-  const rand = min + Math.random() * (max - min);
+  const [quarter, newQuarter] = useState(1)
 
   return (
     <div className="bottomRow">
@@ -24,10 +21,12 @@ const BottomRow = () => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div onClick={() => {newQuarter(Math.ceil(rand))}} className="quarter__value">{quarter}</div>
+        <div onClick={() => { newQuarter(Math.ceil(Math.random() * (4))); }} className="quarter__value">{quarter}</div>        
       </div>
     </div>
   );
 };
+
+
 
 export default BottomRow;
